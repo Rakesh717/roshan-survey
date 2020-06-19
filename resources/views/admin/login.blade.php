@@ -11,29 +11,20 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <style>
-        body {
-            font-family: 'Nunito';
-            width: 100vw !important;
-            overflow: hidden;
-        }
-
-        img {
-            width: 100%;
-            object-fit: cover;
+        .main {
+            display: flex;
+            align-content: center;
             height: 100vh;
+            align-items: center;
         }
     </style>
 </head>
 
 <body>
-    <main class="row">
-        <div class="col-md-6">
-            <img src="https://images.pexels.com/photos/583846/pexels-photo-583846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="">
-        </div>
-        <div class="col-md-6 my-5 px-5">
-            <h1 class="text-center">Admin Login</h1>
-            <form method="POST" action="{{ route('admin.login.submit') }}" class="mt-5">
+    <div class="main">
+        <div style="margin: auto">
+            <h1>Admin Login</h1>
+            <form method="POST" action="{{ route('admin.login.submit') }}">
                 @csrf
                 @if(session('message'))
                 <div class="alert alert-danger">
@@ -51,7 +42,7 @@
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
-    </main>
+    </div>
 </body>
 
 </html>
